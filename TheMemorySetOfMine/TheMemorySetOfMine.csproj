@@ -61,6 +61,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingFeiYuanSuDuiXiang.xaml.cs">
+      <DependentUpon>BindingFeiYuanSuDuiXiang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ElementBindingCode.xaml.cs">
       <DependentUpon>ElementBindingCode.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="BindingFeiYuanSuDuiXiang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ElementBindingCode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
