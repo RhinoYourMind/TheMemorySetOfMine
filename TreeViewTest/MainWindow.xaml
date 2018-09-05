@@ -8,15 +8,17 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="274*"/>
-            <RowDefinition Height="45*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Border Grid.Row="0">
             <TreeView Name="TreeView1"></TreeView>
         </Border>
-        <StackPanel Grid.Row="1">
-            <TextBlock Name="TextBlock1" Text="wangjunxiong" TextAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1"  >
+            <TextBlock Name="TextBlock1" Margin="5" Text="wangjunxiong" TextAlignment="Center"></TextBlock>
             <Button Name="Button1" Content="Button"></Button>
+            <ListBox Name="ListBox1"></ListBox>
         </StackPanel>
 
 

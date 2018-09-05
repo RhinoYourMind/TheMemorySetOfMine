@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Item01>
+    <Item>标题1</Item>
+    <Item>四边平板</Item>
+    <Item>L型平板</Item>
+    <Item>U型平板</Item>
+    <Item>Z型平板</Item>
+  </Item01>
+  
+  <Item02>
+    <Item>标题2</Item>
+    <Item>N边异型</Item>
+    <Item>拐角板1</Item>
+    <Item>拐角板2</Item>
+    <Item>拐角板3</Item>
+  </Item02>
+  
+  <Item03>
+    <Item>标题3</Item>
+    <Item>模具框</Item>
+    <Item>画线框</Item>
+    <Item>四周折边</Item>
+  </Item03>
+</Root>
