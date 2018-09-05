@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDataTree", "C:\Users\Adm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bornander.UI", "C:\Users\Administrator\Desktop\Searchable TreeView CS\Bornander.UI\Bornander.UI.csproj", "{A6D340EB-F146-49D0-B6B1-2069DB054717}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeViewTest", "TreeViewTest\TreeViewTest.csproj", "{5073C9D0-4470-433B-BA75-9C8571FF603A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,14 @@ Global
 		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|x86.ActiveCfg = Release|Any CPU
 		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|x86.Build.0 = Release|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|x86.Build.0 = Debug|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|x86.ActiveCfg = Release|Any CPU
+		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
