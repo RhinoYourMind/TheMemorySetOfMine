@@ -5,11 +5,9 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMemorySetOfMine", "TheMemorySetOfMine\TheMemorySetOfMine.csproj", "{7769523F-FEFA-4664-9C07-43330EAC9C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDataTree", "C:\Users\Administrator\Desktop\XmlTest_Src\XmlDataTree.csproj", "{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bornander.UI", "C:\Users\Administrator\Desktop\Searchable TreeView CS\Bornander.UI\Bornander.UI.csproj", "{A6D340EB-F146-49D0-B6B1-2069DB054717}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeViewTest", "TreeViewTest\TreeViewTest.csproj", "{5073C9D0-4470-433B-BA75-9C8571FF603A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfListView", "WpfListView\WpfListView.csproj", "{863E5C32-9216-40CA-BA69-94A8E0594787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,20 +25,6 @@ Global
 		{7769523F-FEFA-4664-9C07-43330EAC9C92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7769523F-FEFA-4664-9C07-43330EAC9C92}.Release|x86.ActiveCfg = Release|Any CPU
 		{7769523F-FEFA-4664-9C07-43330EAC9C92}.Release|x86.Build.0 = Release|Any CPU
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Debug|x86.ActiveCfg = Debug|x86
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Debug|x86.Build.0 = Debug|x86
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Release|Any CPU.ActiveCfg = Release|x86
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Release|x86.ActiveCfg = Release|x86
-		{EB91D8C9-6A51-465D-B0A3-4B83ACFF5E53}.Release|x86.Build.0 = Release|x86
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Debug|x86.Build.0 = Debug|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|x86.ActiveCfg = Release|Any CPU
-		{A6D340EB-F146-49D0-B6B1-2069DB054717}.Release|x86.Build.0 = Release|Any CPU
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -49,6 +33,14 @@ Global
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|x86.ActiveCfg = Release|Any CPU
 		{5073C9D0-4470-433B-BA75-9C8571FF603A}.Release|x86.Build.0 = Release|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Debug|x86.Build.0 = Debug|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Release|x86.ActiveCfg = Release|Any CPU
+		{863E5C32-9216-40CA-BA69-94A8E0594787}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
