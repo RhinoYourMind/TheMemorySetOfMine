@@ -1,25 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Root>
   <Item01>
-    <Item>标题1</Item>
-    <Item>四边平板</Item>
-    <Item>L型平板</Item>
-    <Item>U型平板</Item>
-    <Item>Z型平板</Item>
+    <Header>标题1</Header>
+    <Items>
+      <Item>
+        <Name>四边平板</Name>
+        <Ditail>四边平板说明</Ditail>
+      </Item>
+      <Item>
+        <Name>L型平板</Name>
+        <Ditail>L型平板说明</Ditail>
+      </Item>
+      <Item>
+        <Name>U型平板</Name>
+        <Ditail>U型平板说明</Ditail>
+      </Item>
+      <Item>
+        <Name>Z型平板</Name>
+        <Ditail>Z型平板说明</Ditail>
+      </Item>
+    </Items>
   </Item01>
-  
+
   <Item02>
-    <Item>标题2</Item>
-    <Item>N边异型</Item>
-    <Item>拐角板1</Item>
-    <Item>拐角板2</Item>
-    <Item>拐角板3</Item>
+    <Header>标题2</Header>
+    <Items>
+      <Item>
+        <Name>N边异型</Name>
+        <Ditail>N边异型说明</Ditail>
+      </Item>
+      <Item>
+        <Name>拐角板1</Name>
+        <Ditail>拐角板1说明</Ditail>
+      </Item>
+      <Item>
+        <Name>拐角板2</Name>
+        <Ditail>拐角板2说明</Ditail>
+      </Item>
+      <Item>
+        <Name>拐角板3</Name>
+        <Ditail>拐角板3说明</Ditail>
+      </Item>
+    </Items>
   </Item02>
-  
+
   <Item03>
-    <Item>标题3</Item>
-    <Item>模具框</Item>
-    <Item>画线框</Item>
-    <Item>四周折边</Item>
+    <Header>标题3</Header>
+    <Items>
+      <Item>
+        <Name>模具框</Name>
+        <Ditail>模具框说明</Ditail>
+      </Item>
+      <Item>
+        <Name>画线框</Name>
+        <Ditail>画线框说明</Ditail>
+      </Item>
+      <Item>
+        <Name>四周折边</Name>
+        <Ditail>四周折边说明</Ditail>
+      </Item>
+    </Items>
   </Item03>
 </Root>

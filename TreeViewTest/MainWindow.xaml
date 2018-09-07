@@ -4,14 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TreeViewTest"
+        xmlns:classFiles="clr-namespace:TreeViewTest.ClassFiles"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <classFiles:TileView x:Key="ImageDetailView" SelectedBackground="LightSteelBlue">
+            <classFiles:TileView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Col2"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="5"  Width="100" Source="{Binding Path=ImagePath }"></Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=ImageName}"></TextBlock>
+                            <TextBlock Text="{Binding Path=Ditail }"></TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </classFiles:TileView.ItemTemplate>
+        </classFiles:TileView>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        
+
         <Border Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -19,7 +43,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TreeView Grid.Column="0" Name="TreeView1" TreeViewItem.Selected="TreeView1_OnSelected"></TreeView>
-                <ListView Grid.Column="1"></ListView>
+                <ListView Name="ListView1" Grid.Column="1" View="{StaticResource ImageDetailView}"></ListView>
             </Grid>
         </Border>
         <StackPanel Grid.Row="1"  >

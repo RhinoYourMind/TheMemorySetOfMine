@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,24 +14,29 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using TreeViewTest.ClassFiles;
 
 namespace TreeViewTest
 {
     public partial class MainWindow : Window
     {
+        ObservableCollection<ClassFiles.ListViewDatas> datasListView = new ObservableCollection<ClassFiles.ListViewDatas>();
         List<string[]> datasList = new List<string[]>();
+        List<string[]> datasList02 = new List<string[]>();
 
         public MainWindow()
         {
             InitializeComponent();
             TreeViewItemData(out datasList); // 初始化TreeViewItem
-            SetDateToTreeViewItem(TreeView1, datasList);
+            SetDateToTreeViewItem(TreeView1, datasList, datasList02);
+            ListView1.ItemsSource = datasListView;
         }
 
         private void TreeViewItemData(out List<string[]> datasList) // 初始化TreeViewItem
         {
 
             List<string[]> lists = new List<string[]>();
+            List<string[]> lists02 = new List<string[]>();
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(Properties.Resources.TreeViewItemInfo); //读取Xml文件，注意要先把Xml文件加入到Properties下的Resources资源文件中
             XmlNode xRoot = xml.SelectSingleNode("Root");
@@ -38,18 +44,25 @@ namespace TreeViewTest
             for (int i = 0; i < xNlist.Count; i++)
             {
                 List<string> list = new List<string>();
+                List<string> list02 = new List<string>();
                 XmlNodeList node = xNlist[i].ChildNodes;
-                for (int j = 0; j < node.Count; j++)
+                list.Add(node[0].InnerText);
+
+                XmlNodeList node2 = node[1].ChildNodes;
+                for (int j = 0; j < node2.Count; j++)
                 {
-                    list.Add(node[j].InnerText);
+                    list.Add(node2[j].ChildNodes[0].InnerText);//数组0为第一个值，数组1为第二个值 
+                    list02.Add(node2[j].ChildNodes[1].InnerText);//数组0为第一个值，数组1为第二个值 
                 }
                 lists.Add(list.ToArray());
+                lists02.Add(list02.ToArray());
             }
             datasList = lists;
-        } //private void TreeViewItemSetData() 初始化TreeViewItem
+            datasList02 = lists02;
+        } //private void TreeViewItemSetData() 初始化TreeViewItem    
 
-        private void SetDateToTreeViewItem(TreeView treeView, List<string[]> lists)
-        {
+        private void SetDateToTreeViewItem(TreeView treeView, List<string[]> lists,  List<string[]> lists02)
+        { 
             for (int i = 0; i < lists.Count; i++)
             {
                 TreeViewItem item = new TreeViewItem();
@@ -63,7 +76,14 @@ namespace TreeViewTest
                     }
                     else
                     {
+                        datasListView.Clear();
                         item.Items.Add(lists[i][j]);
+
+                        ClassFiles.ListViewDatas listViewDatas = new ListViewDatas();
+                        listViewDatas.ImageName = lists[i][j];
+                        listViewDatas.ImagePath = lists[i][j] + ".png";
+                        listViewDatas.Ditail = lists02[i][j - 1];
+                        datasListView.Add(listViewDatas);
                     }
                 }
                 treeView.Items.Add(item);
@@ -80,10 +100,16 @@ namespace TreeViewTest
         {
             List<string[]> lists = new List<string[]>(datasList);
             List<string[]> lists2 = new List<string[]>();
+
+            List<string[]> lists3 = new List<string[]>(datasList02);
+            List<string[]> lists4 = new List<string[]>();
+
             if (ComboBox1.Text.Trim() == String.Empty)
             {
                 TreeView1.Items.Clear();
-                this.SetDateToTreeViewItem(TreeView1, datasList);
+                datasListView.Clear();
+
+                this.SetDateToTreeViewItem(TreeView1, datasList,datasList02);
                 this.CloseAllTreeViewItems(TreeView1);
                 TextBlock2.Text = "进到String.Empty";
             }
@@ -93,6 +119,7 @@ namespace TreeViewTest
                 for (int i = 0; i < lists.Count; i++)
                 {
                     List<string> sList = new List<string>();
+                    List<string> sList2 = new List<string>();
                     int t = 0;
                     for (int j = 1; j < lists[i].Length; j++)
                     {
@@ -107,15 +134,19 @@ namespace TreeViewTest
 
                         if (count == cc.Length)
                         {
+                            ClassFiles.ListViewDatas listViewDatas = new ListViewDatas();
                             if (t == 0)
                             {
                                 sList.Add(lists[i][0]);
                                 sList.Add(lists[i][j]);
-                                t = 1;
+                                sList2.Add(lists3[i][j-1]);
+
+                                  t = 1;
                             }
                             else
                             {
                                 sList.Add(lists[i][j]);
+                                sList2.Add(lists3[i][j - 1]);
                             }
                         }
                     }
@@ -123,13 +154,15 @@ namespace TreeViewTest
                     if (sList.Count > 0)
                     {
                         lists2.Add(sList.ToArray());
+                        lists4.Add(sList2.ToArray());
+
                     }
                 }// for (int i = 0; i < lists.Count; i++)数据处理
 
                 if (lists2.Count > 0)
                 {
                     TreeView1.Items.Clear();
-                    this.SetDateToTreeViewItem(TreeView1, lists2);
+                    this.SetDateToTreeViewItem(TreeView1, lists2, lists4);
                     this.OpenAllTreeViewItems(TreeView1);
                     TextBlock2.Text = "进入lists2.Count > 0 + 数量：" + (ComboBox1.Text.Trim() == String.Empty);
                     //this.CloseAllTreeViewItems();
@@ -142,6 +175,7 @@ namespace TreeViewTest
                     item.FontSize = 12;
                     item.Header = "搜索无结果";
                     TreeView1.Items.Add(item);
+                    datasListView.Clear();
                     TextBlock2.Text = ComboBox1.Text.Trim();
                 }
             }//if (ComboBox1.Text.Trim() == String.Empty)的else部分代码
