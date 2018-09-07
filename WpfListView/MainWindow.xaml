@@ -4,8 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfListView"
+        xmlns:classFiles="clr-namespace:WpfListView.ClassFiles"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <classFiles:TileView x:Key="ImageDetailView" SelectedBackground="LightSteelBlue">
+            <classFiles:TileView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Col2"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="5"  Width="100" Source="{Binding }"></Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Text="{Binding}"></TextBlock>
+                            <TextBlock Text="{Binding }"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </classFiles:TileView.ItemTemplate>
+        </classFiles:TileView>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,3 +46,6 @@
 
     </Grid>
 </Window>
+
+
+
