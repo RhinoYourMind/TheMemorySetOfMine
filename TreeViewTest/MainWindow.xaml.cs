@@ -27,12 +27,12 @@ namespace TreeViewTest
         public MainWindow()
         {
             InitializeComponent();
-            TreeViewItemData(out datasList); // 初始化TreeViewItem
+            TreeViewItemData(); // 初始化TreeViewItem
             SetDateToTreeViewItem(TreeView1, datasList, datasList02);
             ListView1.ItemsSource = datasListView;
         }
 
-        private void TreeViewItemData(out List<string[]> datasList) // 初始化TreeViewItem
+        private void TreeViewItemData() // Xml文件导入数据，数据初始化。
         {
 
             List<string[]> lists = new List<string[]>();
@@ -57,12 +57,13 @@ namespace TreeViewTest
                 lists.Add(list.ToArray());
                 lists02.Add(list02.ToArray());
             }
-            datasList = lists;
-            datasList02 = lists02;
-        } //private void TreeViewItemSetData() 初始化TreeViewItem    
+            this.datasList = lists;
+            this.datasList02 = lists02;
+        } //private void TreeViewItemSetData()   Xml文件导入数据，数据初始化。
 
-        private void SetDateToTreeViewItem(TreeView treeView, List<string[]> lists,  List<string[]> lists02)
-        { 
+        private void SetDateToTreeViewItem(TreeView treeView, List<string[]> lists, List<string[]> lists02)
+        {
+
             for (int i = 0; i < lists.Count; i++)
             {
                 TreeViewItem item = new TreeViewItem();
@@ -76,12 +77,11 @@ namespace TreeViewTest
                     }
                     else
                     {
-                        datasListView.Clear();
                         item.Items.Add(lists[i][j]);
 
                         ClassFiles.ListViewDatas listViewDatas = new ListViewDatas();
                         listViewDatas.ImageName = lists[i][j];
-                        listViewDatas.ImagePath = lists[i][j] + ".png";
+                        listViewDatas.ImagePath = "ImageFilses/" + lists[i][j] + ".png";
                         listViewDatas.Ditail = lists02[i][j - 1];
                         datasListView.Add(listViewDatas);
                     }
@@ -109,7 +109,7 @@ namespace TreeViewTest
                 TreeView1.Items.Clear();
                 datasListView.Clear();
 
-                this.SetDateToTreeViewItem(TreeView1, datasList,datasList02);
+                this.SetDateToTreeViewItem(TreeView1, datasList, datasList02);
                 this.CloseAllTreeViewItems(TreeView1);
                 TextBlock2.Text = "进到String.Empty";
             }
@@ -139,9 +139,9 @@ namespace TreeViewTest
                             {
                                 sList.Add(lists[i][0]);
                                 sList.Add(lists[i][j]);
-                                sList2.Add(lists3[i][j-1]);
+                                sList2.Add(lists3[i][j - 1]);
 
-                                  t = 1;
+                                t = 1;
                             }
                             else
                             {
@@ -162,6 +162,8 @@ namespace TreeViewTest
                 if (lists2.Count > 0)
                 {
                     TreeView1.Items.Clear();
+                    datasListView.Clear();
+
                     this.SetDateToTreeViewItem(TreeView1, lists2, lists4);
                     this.OpenAllTreeViewItems(TreeView1);
                     TextBlock2.Text = "进入lists2.Count > 0 + 数量：" + (ComboBox1.Text.Trim() == String.Empty);

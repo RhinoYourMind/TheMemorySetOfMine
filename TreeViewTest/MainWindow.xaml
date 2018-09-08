@@ -53,6 +53,7 @@
             <Border Margin="20">
                 <StackPanel>
                     <ComboBox Margin="5" Name="ComboBox1" IsEditable="True" TextBoxBase.TextChanged="ComboBox1_OnTextChanged" ></ComboBox>
+                    <TextBlock Name="TextBlock3"></TextBlock>
                     <Button Name="Button2" Content="搜索" ></Button>
                 </StackPanel>
             </Border>
